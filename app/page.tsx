@@ -1,7 +1,13 @@
 import { Hero,SearchBar,CustomFilter } from '@/components'
+import { fetchCars } from '@/utils'
 import Image from 'next/image'
 
-export default function Home() {
+export default async function Home() {
+
+  const carsDats = await fetchCars();
+  console.log("cccc",carsDats);
+  
+
   return (
     <main className="overflow-hidden">
        <Hero />
